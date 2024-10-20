@@ -22,10 +22,10 @@ class Solution(object):
         if not nums:
             return []
         
-        result = []
+        result = []  # List to store duplicate numbers
         for _, num in enumerate(nums):
             index = abs(num)-1
             if nums[index] < 0:
                 result.append(index+1)
             nums[index]*=-1
-        return result
+        return result  # Return the list of duplicates

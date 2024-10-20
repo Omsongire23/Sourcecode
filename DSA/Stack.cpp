@@ -1,29 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct node
+struct Node
 {
     char data;
-    node *next;
+    Node *next;
 };
 
 struct MyStack
 {
-    node *top;
+    Node *top;
     MyStack()
     {
         top = NULL;
     }
     void push(char value)
     {
-        node *newnode = new node();
+        Node *newnode = new Node();
         newnode->data = value;
         newnode->next = top;
         top = newnode;
     }
     bool isEmpty()
     {
-        return top == NULL;
+        return top == nullptr;
     }
     char pop()
     {
@@ -32,7 +32,7 @@ struct MyStack
             cout << "UNDERFLOW !!!" << endl;
             return '\0';  // Changed to '\0'
         }
-        node *temp = top;
+        Node *temp = top;
         char popValue = temp->data;
         top = top->next;
         delete temp;
@@ -56,7 +56,7 @@ bool isOperator(char ch)
 
 int precedence(char op)
 {
-    if (op == '+' || op == '-')
+    if (op == '+' || op == '-') 
         return 1;
     else if (op == '*' || op == '/')
         return 2;
@@ -205,7 +205,7 @@ int main()
 
     do
     {
-        cout << "-------------menu----------------" << endl;
+        cout << "------------- Menu -------------" << endl;
         cout << "1. Convert Infix to Postfix" << endl;
         cout << "2. Convert Infix to Prefix" << endl;
         cout << "3. Evaluate Postfix Expression" << endl;
